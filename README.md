@@ -67,6 +67,7 @@ concrete_model <- neuralnet(
 options(repr.plot.width = 12, repr.plot.height = 6)
 plot(concrete_model, rep = "best", intercept = FALSE, show.weights = TRUE, information = TRUE)
 ```
+Graph available in the ``` Neural Networks``` folder (model 1).
 ## ✅ Model Evaluation
 ```
 model_results <- compute(concrete_model, concrete_test[1:8])
@@ -90,15 +91,17 @@ concrete_model2 <- neuralnet(
 
 plot(concrete_model2, rep = "best", intercept = FALSE, show.weights = TRUE, information = TRUE)
 ```
+Graph available in the ``` Neural Networks``` folder (model 2).
+
 ## 🔍 Improved Evaluation
 ```
 model_results2 <- compute(concrete_model2, concrete_test[1:8])
 predicted_strength2 <- model_results2$net.result
 cor(predicted_strength2, concrete_test$concrete_compressive_strength)
 SSE reduced: from 5.666 to 1.48
-
-Correlation improved: from 0.72 to 0.74
 ```
+Correlation improved: from 0.72 to 0.74
+
 ## 📌 Conclusion
 Even with a basic neural network and normalized data, we achieved a strong predictive model. Increasing the network complexity further improved performance. This demonstrates how neural networks can effectively model nonlinear relationships in real-world datasets.
 
